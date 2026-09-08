@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP Pipeline Builder - Alex Chen | Data Scientist</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="container header-content project-page-header">
+            <a href="../index.html" class="logo">Alex Chen</a>
+            <nav class="nav-menu">
+                <a href="#" class="nav-link">← Back to Projects</a>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding: 4rem 0;">
+        <div class="container project-single-page">
+            <article class="project-detail-card">
+                <img src="https://via.placeholder.com/1200x600/2c5282/ffffff?text=Project+2" alt="Project 2 Detail View"/>
+                
+                <div class="project-detail-content">
+                    <span class="project-category">Natural Language Processing</span>
+                    
+                    <h1 class="project-title-main">NLP Pipeline Builder</h1>
+                    
+                    <p class="project-intro">Modular NLP preprocessing and analysis toolkit enabling rapid development of text processing workflows for diverse use cases like sentiment analysis, named entity recognition, and text classification.</p>
+
+                    <div class="project-detail-grid">
+                        <div class="feature-section">
+                            <h3>Key Features</h3>
+                            <ul class="feature-list">
+                                <li><strong>Modular Architecture:</strong> Snap-together style NLP components for rapid prototyping</li>
+                                <li><strong>Built-in Transformers:</strong> Pre-configured pipelines for BERT, RoBERTa, DistilBERT models</li>
+                                <li><strong>Data Augmentation Tools:</strong> Automated text generation and variation techniques</li>
+                                <li><strong>Evaluation Framework:</strong> Standardized metrics and confusion matrix visualizations</li>
+                            </ul>
+                        </div>
+
+                        <div class="code-section">
+                            <h3>Quick Start</h3>
+                            <pre class="code-block"><code>from nlp_pipeline import Pipeline
+
+pipeline = Pipeline()
+pipeline.add("tokenization", "bert-base-cased")
+pipeline.add("ner", spaCy_en)
+pipeline.add("sentiment", sentiment_roberta)
+
+results = pipeline.run(texts_data)
+print(f"Sentiment: {results['sentiment'].mean():.2f}")</code></pre>
+
+                            <h4>Tech Stack Used</h4>
+                            <div class="tech-stack-detail">
+                                <span class="tech-pill">Python</span>
+                                <span class="tech-pill">spaCy</span>
+                                <span class="tech-pill">Hugging Face</span>
+                                <span class="tech-pill">Pandas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="results-section">
+                        <h3>Impact</h3>
+                        <ul class="results-list">
+                            <li><strong>Development Speed:</strong> 3x faster prototyping compared to building from scratch</li>
+                            <li><strong>Model Accuracy:</strong> Consistent performance within ±2% variance on standard datasets</li>
+                            <li><strong>Reusability:</strong> Used across 4 different client projects</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="#" rel="noopener noreferrer" target="_blank" class="btn btn-primary">View on GitHub</a>
+                        <a href="#" rel="noopener noreferrer" target="_blank" class="btn btn-secondary">Live Demo</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer id="contact" class="footer-section">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <p>&copy; 2024 Alex Chen. Built with ❤️ for aspiring AI engineers</p>
+            </div>
+            
+            <div class="footer-socials">
+                <a href="#" rel="noopener noreferrer" target="_blank" class="social-link github">G</a>
+                <a href="#" rel="noopener noreferrer" target="_blank" class="social-link linkedin">L</a>
+                <a href="#" rel="noopener noreferrer" target="_blank" class="social-link twitter">@</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

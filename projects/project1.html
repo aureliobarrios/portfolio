@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributed Training System - Alex Chen | Data Scientist</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="container header-content project-page-header">
+            <a href="../index.html" class="logo">Alex Chen</a>
+            <nav class="nav-menu">
+                <a href="#" class="nav-link">← Back to Projects</a>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding: 4rem 0;">
+        <div class="container project-single-page">
+            <article class="project-detail-card">
+                <img src="https://via.placeholder.com/1200x600/319795/ffffff?text=Distributed+Training" alt="Project 1 Detail View"/>
+                
+                <div class="project-detail-content">
+                    <span class="project-category">Machine Learning Infrastructure</span>
+                    
+                    <h1 class="project-title-main">Distributed Training System</h1>
+                    
+                    <p class="project-intro">A scalable ML training pipeline that reduced model training time by 60% through intelligent workload distribution and GPU resource optimization.</p>
+
+                    <div class="project-detail-grid">
+                        <div class="feature-section">
+                            <h3>Key Features</h3>
+                            <ul class="feature-list">
+                                <li><strong>Intelligent Load Balancing:</strong> Automatically distributes training batches across GPU clusters based on current load and performance metrics</li>
+                                <li><strong>Fault Tolerance:</strong> Checkpoint-based recovery allows resuming failed jobs without losing progress</li>
+                                <li><strong>Resource Optimization:</strong> Dynamic allocation of compute resources based on model complexity and dataset size</li>
+                                <li><strong>Monitoring Dashboard:</strong> Real-time visualization of training metrics, resource usage, and error tracking</li>
+                            </ul>
+                        </div>
+
+                        <div class="code-section">
+                            <h3>Technical Implementation</h3>
+                            <pre class="code-block"><code># Example: Configuring the distributed trainer
+from distributed_ml import Trainer
+
+config = {
+    'num_gpus': 8,
+    'batch_size': 256,
+    'checkpoints_dir': '/path/to/checkpoints',
+}
+
+trainer = Trainer(config=config)
+trainer.train(model='bert-base-uncased', epochs=10)
+</code></pre>
+
+                            <h4>Tech Stack Used</h4>
+                            <div class="tech-stack-detail">
+                                <span class="tech-pill">Python</span>
+                                <span class="tech-pill">PyTorch</span>
+                                <span class="tech-pill">Docker</span>
+                                <span class="tech-pill">Kubernetes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="results-section">
+                        <h3>Performance Improvements</h3>
+                        <ul class="results-list">
+                            <li><strong>Training Time:</strong> 4 hours → 1.6 hours (60% reduction)</li>
+                            <li><strong>Cost Savings:</strong> Reduced GPU utilization while maintaining higher throughput</li>
+                            <li><strong>MTP Reduction:</strong> First usable model delivered twice as fast</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="#" rel="noopener noreferrer" target="_blank" class="btn btn-primary">View on GitHub</a>
+                        <a href="#" rel="noopener noreferrer" target="_blank" class="btn btn-secondary">Live Demo</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer id="contact" class="footer-section">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <p>&copy; 2024 Alex Chen. Built with ❤️ for aspiring AI engineers</p>
+            </div>
+            
+            <div class="footer-socials">
+                <a href="#" rel="noopener noreferrer" target="_blank" class="social-link github">G</a>
+                <a href="#" rel="noopener noreferrer" target="_blank" class="social-link linkedin">L</a>
+                <a href="#" rel="noopener noreferrer" target="_blank" class="social-link twitter">@</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Analytics Dashboard - Alex Chen | Data Scientist</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="container header-content project-page-header">
+            <a href="../index.html" class="logo">Alex Chen</a>
+            <nav class="nav-menu">
+                <a href="#" class="nav-link">← Back to Projects</a>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding: 4rem 0;">
+        <div class="container project-single-page">
+            <article class="project-detail-card">
+                <img src="https://via.placeholder.com/1200x600/319795/ffffff?text=Analytics+Dashboard" alt="Project 3 Detail View"/>
+                
+                <div class="project-detail-content">
+                    <span class="project-category">Real-time Analytics</span>
+                    
+                    <h1 class="project-title-main">Real-time Analytics Dashboard</h1>
+                    
+                    <p class="project-intro">Interactive visualization platform processing billions of events daily, providing actionable insights for enterprise decision-making through advanced data aggregation and stream processing.</p>
+
+                    <div class="project-detail-grid">
+                        <div class="feature-section">
+                            <h3>Key Features</h3>
+                            <ul class="feature-list">
+                                <li><strong>Real-time Streaming:</strong> Kafka-based event ingestion with sub-second latency for live dashboards</li>
+                                <li><strong>Multi-tenant Architecture:</strong> Isolated data processing per client while sharing compute infrastructure</li>
+                                <li><strong>Customizable Visualizations:</strong> Drag-and-drop UI builder for analysts to create their own charts and reports</li>
+                                <li><strong>Alert System:</strong> ML-powered anomaly detection triggering automatic alerts on threshold breaches</li>
+                            </ul>
+                        </div>
+
+                        <div class="code-section">
+                            <h3>Architecture Overview</h3>
+                            <pre class="code-block"><code># Event processing pipeline structure
+def process_stream(event_batch):
+    # Filter and enrich incoming events
+    filtered = filter_relevant_events(event_batch)
+    
+    # Aggregate by time window
+    metrics = aggregate_metrics(
+        batch=filtered,
+        window='1h',
+        dimensions=['user_id', 'region']
+    )
+
+    # Alert on anomalies if needed
+    anomalies = detect_anomalies(metrics)
+    
+    return {
+        'metrics': metrics,
+        'alerts': anomalies
+    }</code></pre>
+
+                            <h4>Tech Stack Used</h4>
+                            <div class="tech-stack-detail">
+                                <span class="tech-pill">Python</span>
+                                <span class="tech-pill">FastAPI</span>
+                                <span class="tech-pill">React</span>
+                                <span class="tech-pill">PostgreSQL</span>
+                                <span class="tech-pill">Kafka</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="results-section">
+                        <h3>Metric Achievements</h3>
+                        <ul class="results-list">
+                            <li><strong>Data Volume:</strong> Processed 50M+ events per hour consistently</li>
+                            <li><strong>Latency:</strong> P99 query time under 200ms for live dashboards</li>
+                            <li><strong>Uptime:</strong> 99.9% availability with automatic failover</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="#" rel="noopener noreferrer" target="_blank" class="btn btn-primary">View on GitHub</a>
+                        <a href="../index.html#projects" class="link-back">← Back to Project List</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer id="contact" class="footer-section">
+        <div class="container footer-content">
+            <div class="footer-left">
+                <p>&copy; 2024 Alex Chen. Built with ❤️ for aspiring AI engineers</p>
+            </div>
+            
+            <div class="footer-socials">
+                <a href="#" rel="noopener noreferrer" target="_blank" class="social-link github">G</a>
+                <a href="#" rel="noopener noreferrer" target="_blank" class="social-link linkedin">L</a>
+                <a href="#" rel="noopener noreferrer" target="_blank" class="social-link twitter">@</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
