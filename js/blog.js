@@ -121,12 +121,7 @@ In this article, I'll share my approach to building scalable machine learning pi
 
 ### Write clean data transformations
 
-```python
-def preprocess_data(df):
-    """Simple and maintainable preprocessing"""
-    df['normalized'] = (df['value'] - df['mean']) / df['std']
-    return df
-```
+Including transformation in PySpark.
 
 ### Implement proper error handling
 
@@ -160,18 +155,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const fullMarkdown = getBlogContent(post.id);
         const parsedContent = parseMarkdown(fullMarkdown);
         
-        blogCard.innerHTML = \`
-            <h3 class="blog-post-title">\${post.title}</h3>
-            <p class="blog-post-excerpt">\${post.excerpt}</p>
+        blogCard.innerHTML = `
+            <h3 class="blog-post-title">\'${post.title}</h3>
+            <p class="blog-post-excerpt">\'${post.excerpt}</p>
             <div class="blog-post-meta">
-                <span>\${post.date}</span> · 
-                <span class="category">\${post.category}</span> · 
-                <span>\${post.readTime}</span>
+                <span>\'${post.date}</span> · 
+                <span class="category">\'${post.category}</span> · 
+                <span>\'${post.readTime}</span>
             </div>
             <br>
-            <div class="markdown-content">\${parsedContent}</div>
-            <a href="\${post.link}" class="blog-post-btn" rel="noopener noreferrer">Read Full Post</a>
-        \`;
+            <div class="markdown-content">\'${parsedContent}</div>
+            <a href="\'${post.link}" class="blog-post-btn" rel="noopener noreferrer">Read Full Post</a>
+        `;
         
         container.appendChild(blogCard);
     });
