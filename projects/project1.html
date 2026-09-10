@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Distributed Training System - Alex Chen | Data Scientist</title>
+    <title>AI Infrastructure on AWS - Aurelio Barrios</title>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
     <header class="sticky-header">
         <div class="container header-content project-page-header">
-            <a href="../index.html" class="logo">Alex Chen</a>
+            <a href="../index.html" class="logo">Aurelio Barrios</a>
             <nav class="nav-menu">
-                <a href="#" class="nav-link">← Back to Projects</a>
+                <a href="../index.html#projects" class="nav-link">← Back to Projects</a>
             </nav>
         </div>
     </header>
@@ -19,27 +19,48 @@
     <main style="padding: 4rem 0;">
         <div class="container project-single-page">
             <article class="project-detail-card">
-                <img src="https://via.placeholder.com/1200x600/319795/ffffff?text=Distributed+Training" alt="Project 1 Detail View"/>
+                <!-- <img src="../images/proj1.png" alt="Project 1 Detail View"/> -->
                 
                 <div class="project-detail-content">
-                    <span class="project-category">Machine Learning Infrastructure</span>
+                    <!-- <span class="project-category">Machine Learning Infrastructure</span> -->
                     
-                    <h1 class="project-title-main">Distributed Training System</h1>
+                    <!-- <h1 class="project-title-main">From Concept to Deployment: Architecting a Next-Generation AI Learning Platform on AWS</h1> -->
+
+                    <!-- <p>By: Aurelio Barrios</p> -->
                     
-                    <p class="project-intro">A scalable ML training pipeline that reduced model training time by 60% through intelligent workload distribution and GPU resource optimization.</p>
+                    <div class="card-image">
+                            <img src="../images/proj1-header.png" alt="Project 1"/>
+                    </div>
+
+                    <p>
+                        During the my time at The Knowledge House, I hade the great opportunity of leading the end-to-end deployment of an AI learning assistant served to thousands of users. This project known as 
+                        <em>Knowledge Base</em> was an AI initiative with the goal of delivering personalized, up to date learning curriculum leveraging the power of Retrieval Augmented Generation.
+                    </p>
+
+                    <p>
+                        <strong>Project Scope:</strong> Build an AI chatbot that acts as a knowledgeable personalized guide gathering its context from years of learning curriculum hosted on the organizations proprietary 
+                        knowledge base, but also leverages the power of the ever-changing web to stay up to date and provide users with relevant current information.
+                    
+                    </p>
+                    
+                    <p>
+                        As the Data Science lead on this project, I was not just in charge of the technical implementation. I was responsible for making key infrastructure decisions, managing the project lifecycle, defining key
+                        requirements with board members and organization stakeholders in order to align expectations organization wide, and be the organizations face when communicating with external teams from AWS.
+                    </p>
 
                     <div class="project-detail-grid">
                         <div class="feature-section">
                             <h3>Key Features</h3>
                             <ul class="feature-list">
-                                <li><strong>Intelligent Load Balancing:</strong> Automatically distributes training batches across GPU clusters based on current load and performance metrics</li>
-                                <li><strong>Fault Tolerance:</strong> Checkpoint-based recovery allows resuming failed jobs without losing progress</li>
-                                <li><strong>Resource Optimization:</strong> Dynamic allocation of compute resources based on model complexity and dataset size</li>
-                                <li><strong>Monitoring Dashboard:</strong> Real-time visualization of training metrics, resource usage, and error tracking</li>
+                                <li><strong>Cloud Development:</strong> Hosted and deployed entirely on AWS, ensuring scalable, low latency and consistent infrastructure meeting the demands of thousands of daily user requests.</li>
+                                <li><strong>Web Scraping AI Agent:</strong> An AI agent that built learning paths and scraped the web validating external web content that could be used by the user.</li>
+                                <li><strong>CI/CD Pipeline:</strong> Built in CI/CD pipeline that served versioned Docker images to our EC2 instance insuring continuous integration and continuous deployment.</li>
+                                <li><strong>Retrieval Augmented Generation:</strong> Leveraged the power of RAG to build context aware chatbots and utilize years of learning curriculum.</li>
+                                <li><strong>Verification Algorithm:</strong> Reddit style verification algorithm that leveraged user interaction data like: upvotes, downvotes and interaction time on learning resources in order to "verify" and feed to RAG Vector Database.</li>
                             </ul>
                         </div>
 
-                        <div class="code-section">
+                        <!-- <div class="code-section">
                             <h3>Technical Implementation</h3>
                             <pre class="code-block"><code># Example: Configuring the distributed trainer
 from distributed_ml import Trainer
@@ -52,31 +73,127 @@ config = {
 
 trainer = Trainer(config=config)
 trainer.train(model='bert-base-uncased', epochs=10)
-</code></pre>
+</code></pre> -->
 
-                            <h4>Tech Stack Used</h4>
-                            <div class="tech-stack-detail">
-                                <span class="tech-pill">Python</span>
-                                <span class="tech-pill">PyTorch</span>
-                                <span class="tech-pill">Docker</span>
-                                <span class="tech-pill">Kubernetes</span>
-                            </div>
                         </div>
                     </div>
 
-                    <div class="results-section">
+                    <div class="infrastructure-section">
+                        <h3>Infrastructure Diagram</h3>
+                        <img src="../images/proj1.png" alt="Project 1"/>
+                    </div>
+
+                    <div class="implementation-section">
+                        <h3>Implementing the Technical Layers: From Code to Cloud</h3>
+                        <p>
+                            In order to build such an extensive platform, there needed to be a lot of coordination and I did this by structuring the project into multiple distinct technical components. Each component hit a key
+                            technical domain, the components then interacted and worked with each other to build a single working platform.
+                        </p>
+                        <h3>1. The Data Foundation: PostgreSQL, S3, AWS DynamoDB</h3>
+                        <p>
+                            At the heart of this learning platform was data. This project involved working with various different types of data some structured, semi-structured and unstructured data. All data equally important to 
+                            the success of the platform. At the core was a comprehensive <strong>PostgreSQL</strong> schema that served as a source of truth. This database did not just store static content it tracked:
+                            
+                            <ul class="results-list">
+                                <li>User data and interaction history (for personalization).</li>
+                                <li>Resource metadata (source, date, category, difficulty level, instruction program).</li>
+                                <li>A verification layer, tracking which resources were "verified" and deemed high quality enough to be fed to the RAG model.</li>
+                            </ul>
+                            
+                            In order to feed the RAG model with the best context we used <strong>AWS DynamoDB</strong> in order to store our vector embeddings that allowed for similarity searches, feeding our responses with
+                            accurate and relevant context. Lastly, <strong>AWS S3</strong> buckets hosted a majority of the web content stored in an efficient manner that could be easily accessed and filtered using metadata
+                            in order to only pull content specific to a certain topic.
+                        </p>
+                        <h3>2. The Intelligence Engine: AWS Bedrock & RAG</h3>
+                        <p>
+                            At the heart of the chatbot was <strong>AWS Bedrock</strong>, which allowed us to access a multitude of different <strong>Large Language Models</strong>. This allowed us to test the output of different
+                            models in order to ensure we deployed the model that was best suited for our use case. In order to ensure that our responses were built on accurate and relevant context, I implemented a robust 
+                            <strong>Retrieval Augmented Generation</strong> pipeline.
+                            <ul class="results-list">
+                                <li><strong>Process:</strong> User queries are converted to embeddings in order for the RAG pipeline to retrieve the most relevant context from our verified learning resources. The model then adds
+                                    this context to the LLM in order to generate a response that is relevant.
+                                </li>
+                                <li><strong>Quality Assurance:</strong> A critical part of this setup was the integration of <strong>LangSmith</strong>. This framework allowed us to rigorously test and fine-tune the model output against
+                                our already existing learning curriculum standards. This guaranteed that our responses stayed consistent with the teaching curriculum that was already being taught by instructors at the organization.</li>
+                            </ul>
+                        </p>
+                        <h3>3. Content Acquisition Layer: The Web Scraping AI Agent</h3>
+                        <p>
+                            A key requirement for the project was to ensure that our learning content remained dynamic and did not just rely on legacy learning curriculum. Therefore our learning platform needed access to the web in order
+                            to pull in up to date information that could be used to build relevant context for the RAG model. The <strong>AI Agent</strong> was designed to scrape the web for learning resources based on user data.
+                            <ul class="results-list">
+                                <li><strong>Personalization:</strong> The agent used user data (such as performance metrics, interaction history, perceived skill, etc.) to build highly personalized learning paths based on 
+                                    the users initial query.</li>
+                                <li><strong>Web Scrapping:</strong> Based on these learning paths, the agent autonomously scraped key industry websites ike Reddit, Stack Overflow, and various tool documentation sites.</li>
+                                <li><strong>Verification Step:</strong> Additionally the AI Agent then fed newly discovered learning resources to our client facing Reddit style internal website where users could interact, access 
+                                and vote on these resources. Resources that were considered "high signal", by passing a verification process (using our own built algorithm) were then processed, embedded and stored into an S3 bucket
+                                tied to RAG system.</li>
+                            </ul>
+                        </p>
+                        <h3>4. API Gateway: FastAPI, Docker and EC2 Deployment</h3>
+                        <p>
+                            In order to tie in the <strong>Node.js</strong> client facing website with our AWS hosted chatbot we needed an <strong>API connection</strong> layer. This came in the form of a <strong>Python</strong> based
+                            API application built using <strong>FastAPI</strong>.
+                            <ul class="results-list">
+                                <li><strong>Abstraction:</strong> This API layer acted as the source of communication, abstracting the complexity and moving parts of the RAG pipeline away from the client facing website.</li>
+                                <li><strong>Deployment Strategy:</strong> Local testing involved containerizing the API application using a <strong>Docker</strong> image deployed on <strong>AWS LightSail</strong>. Once we were ready
+                                to push to production we switched the container to a dedicated <strong>EC2</strong> instance. Equipped with <strong>AWS EC2 Auto Scaling</strong> we were ready to scale our deployment handling
+                                hundreds of requests on a daily basis. </li>
+                            </ul>
+                        </p>
+                        <h3>5. Operations & Deployment: The CI/CD Pipeline</h3>
+                        <p>
+                            Another deployment requirement was having a robust <strong>CI/CD</strong> pipeline in order to ensure that our deployment process was automated and versioned. To achieve this I setup a pipeline
+                            utilizing <strong>GitHub Actions</strong> so that when we made changes to the main branch of our private repository, we would see a new deployment (considering all validation tests were passed).
+                            <ul class="results-list">
+                                <li><strong>Automation:</strong> I configured a <strong>YAML</strong> workflow that automatically triggered upon commits to the main branch. The steps in this workflow invovled: creating a new environment (with 
+                                    all the neccessary packages to run our <strong>Python</strong> based API), containerizing our application, setting up AWS credentials, validating tests using <strong>LangSmith</strong>, pushing a new version of our deployment
+                                to AWS.</li>
+                                <li><strong>Reliability:</strong> The pipeline's function was simple yet vital: build a new <strong>Docker</strong> image of the latest API code, push it to our container registry, and safely
+                                deploy it to the production <strong>EC2</strong> instance. This ensured that every code change was immediately tested, containerized and deployed thus minimizing downtime and human error.</li>
+                            </ul>
+                        </p>
+                    </div>
+
+                    <div class="reflection-section">
+                        <h3>Reflection: Beyond the Code</h3>
+                        <p>
+                            Looking back, what truly defined this project was the fact that this was the first time in my career where I was entirely in charge of a project end to end. This experience came at an early time in my career where
+                            I was still struggling with imposter syndrome and did not know if I was ready for my next big opportunity.
+                        </p>
+                        <p>
+                            As the lead, my responsibilities extended far beyond just writing Python code. I was responsbile for:
+                            <ul class="results-list">
+                                <li><strong>Translating Ambiguity:</strong> Working with non-technical board members and internal stakeholders in order to understand their high-level goals and translating that into concrete technical implementations. 
+                                This was something that I found difficult at first. I found that presenting my findings and being open to direct feedback led me to find the solutions that served the organizations goals.</li>
+                                <li><strong>Deciding Architecture:</strong> Being able to lead technical decision making and justifying my decisions led me to understand that trade-offs in cost, complexity, and scalability truly matter.
+                                    This shifted my understanding to not just think of the what but also the why.</li>
+                                <li><strong>Governance & Alignment:</strong> Acting as the communication conduit between our internal team and the external AWS cloud partnership teams was a huge responsibility. I had to ensure that
+                                    all infrastructure decisions adhered to the best industry standards for security and cost efficiency. I had to make sure that both my organization and AWS were aligned in order to meet grant requirements.
+                                </li>
+                            </ul>
+                        </p>
+                        <p>
+                            This project was invaluable in giving me the experience of leading cross functional teams, meeting high-stakes initiatives and building at scale. I am incredibly proud of the work that was done and looking forward 
+                            to continue to apply the knowledge gained through this project throughout my career.
+                        </p>
+                    </div>
+
+                    <!-- <div class="results-section">
                         <h3>Performance Improvements</h3>
                         <ul class="results-list">
                             <li><strong>Training Time:</strong> 4 hours → 1.6 hours (60% reduction)</li>
                             <li><strong>Cost Savings:</strong> Reduced GPU utilization while maintaining higher throughput</li>
                             <li><strong>MTP Reduction:</strong> First usable model delivered twice as fast</li>
                         </ul>
-                    </div>
-
-                    <div class="project-actions">
+                    </div> -->
+                    
+                    <!-- <br> -->
+                    
+                    <!-- <div class="project-actions">
                         <a href="#" rel="noopener noreferrer" target="_blank" class="btn btn-primary">View on GitHub</a>
                         <a href="#" rel="noopener noreferrer" target="_blank" class="btn btn-secondary">Live Demo</a>
-                    </div>
+                    </div> -->
                 </div>
             </article>
         </div>
@@ -85,13 +202,11 @@ trainer.train(model='bert-base-uncased', epochs=10)
     <footer id="contact" class="footer-section">
         <div class="container footer-content">
             <div class="footer-left">
-                <p>&copy; 2024 Alex Chen. Built with ❤️ for aspiring AI engineers</p>
+                <p>&copy; 2026 Aurelio Barrios · Data Scientist · AI Engineer</p>
             </div>
             
             <div class="footer-socials">
-                <a href="#" rel="noopener noreferrer" target="_blank" class="social-link github">G</a>
-                <a href="#" rel="noopener noreferrer" target="_blank" class="social-link linkedin">L</a>
-                <a href="#" rel="noopener noreferrer" target="_blank" class="social-link twitter">@</a>
+                <a href="https://www.linkedin.com/in/aurelio-barrios/" rel="noopener noreferrer" target="_blank" class="social-link linkedin"><strong>LinkedIn</strong></a>
             </div>
         </div>
     </footer>
